@@ -109,7 +109,7 @@ public class StateGame implements Common{
 					}
 				}
 			}
-		}else if(keyState.containsAndRemove(KeyCode.NUM0)){
+		}else if(keyState.containsAndRemove(KeyCode.NUM0|KeyCode.BACK)){
 			game_status = GAME_PAUSE;
 		}else if(keyState.containsAndRemove(KeyCode.NUM2)){
 			if(engine.isDebugMode()){
@@ -359,12 +359,12 @@ public class StateGame implements Common{
 			drawPassInterface();
 			break;	
 		case GAME_FAIL:		//Ê§°Ü
-			int count = 0;
-			if(level <= 3){
+			int count = 10;
+			/*if(level <= 3){
 				count = level*10;
 			}else{
 				count = 30;
-			}
+			}*/
 			StateGameFail fail = new StateGameFail(engine);
 			int i = fail.processGameFail(count);
 			if(i == 0){

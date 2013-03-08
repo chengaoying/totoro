@@ -7,6 +7,7 @@ import cn.ohyeah.stb.key.KeyCode;
 import cn.ohyeah.stb.key.KeyState;
 import cn.ohyeah.stb.res.UIResource;
 import cn.ohyeah.stb.ui.PopupConfirm;
+import cn.ohyeah.stb.ui.PopupText;
 
 /**
  * 选择龙猫界面
@@ -55,20 +56,26 @@ public class StateSelectInterface implements Common{
 	
 	private void processSelectTotoro(int mainIndex){
 		if((menuIndex==2 && !StateGame.hasTotoro3) || (menuIndex==3 && !StateGame.hasTotoro4)){
-			PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
-			pc.setText("龙猫未解锁,解锁需要"+num+engine.getEngineService().getExpendAmountUnit()+",是否解锁?");
-			if(menuIndex==2){
-				int index = pc.popup();
-				if(index==0){
-					if(engine.pm.buyProp(61, 1, null)){
-						StateGame.hasTotoro3 = true;
-					}
-				}
+			if(engine.bate){
+				PopupText pt = UIResource.getInstance().buildDefaultPopupText();
+				pt.setText("此版本为公测版本,赞不提供道具购买,请关注我们正式版本.");
+				pt.popup();
 			}else{
-				int index = pc.popup();
-				if(index==0){
-					if(engine.pm.buyProp(62, 1, null)){
-						StateGame.hasTotoro4 = true;
+				PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
+				pc.setText("龙猫未解锁,解锁需要"+num+engine.getEngineService().getExpendAmountUnit()+",是否解锁?");
+				if(menuIndex==2){
+					int index = pc.popup();
+					if(index==0){
+						if(engine.pm.buyProp(61, 1, null)){
+							StateGame.hasTotoro3 = true;
+						}
+					}
+				}else{
+					int index = pc.popup();
+					if(index==0){
+						if(engine.pm.buyProp(62, 1, null)){
+							StateGame.hasTotoro4 = true;
+						}
 					}
 				}
 			}

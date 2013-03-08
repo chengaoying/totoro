@@ -141,24 +141,30 @@ public class StateMain implements Common{
 				Resource.clearMain();
 			}
 		} else if (mainIndex == 2) {	//充值
-			PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
-			if(Configurations.getInstance().isTelcomOperatorsTelcomfj()){
-				pc.setText("是否退出游戏并跳转至大厅充值界面?");
-				if (pc.popup() == 0) {
-					ServiceWrapper sw = engine.getServiceWrapper();
-					sw.gotoRechargePage();
-					PopupText pt = UIResource.getInstance().buildDefaultPopupText();
-					if (sw.isServiceSuccessful()) {
-						exit = true;
-					} 
-					else {
-						pt.setText("跳转至大厅充值界面失败, 原因: "+sw.getServiceMessage());
-						pt.popup();
-					}
-				}
+			if(engine.bate){
+				PopupText pt = UIResource.getInstance().buildDefaultPopupText();
+				pt.setText("此版本为公测版本,赞不提供充值功能,请关注我们正式版本.");
+				pt.popup();
 			}else{
-				Recharge recharge = new Recharge(engine);
-				recharge.recharge();
+				PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
+				if(Configurations.getInstance().isTelcomOperatorsTelcomfj()){
+					pc.setText("是否退出游戏并跳转至大厅充值界面?");
+					if (pc.popup() == 0) {
+						ServiceWrapper sw = engine.getServiceWrapper();
+						sw.gotoRechargePage();
+						PopupText pt = UIResource.getInstance().buildDefaultPopupText();
+						if (sw.isServiceSuccessful()) {
+							exit = true;
+						} 
+						else {
+							pt.setText("跳转至大厅充值界面失败, 原因: "+sw.getServiceMessage());
+							pt.popup();
+						}
+					}
+				}else{
+					Recharge recharge = new Recharge(engine);
+					recharge.recharge();
+				}
 			}
 		} else if (mainIndex == 3){ 	//游戏帮助
 			StateHelp sh = new StateHelp(engine);

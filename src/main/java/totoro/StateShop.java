@@ -121,38 +121,44 @@ public class StateShop implements Common{
 		}else if(keyState.containsAndRemove(KeyCode.DOWN)){
 			menuIndex = 1;
 		}else if(keyState.containsAndRemove(KeyCode.OK)){
-			if(menuIndex == 0){
-				if(StateGame.wingplaneMaxNums<4){
-					PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
-					pc.setText("是否要购买守护精灵?");
-					int index = pc.popup();
-					if(index==0){
-						if(StateGame.wingplaneMaxNums==1){
-							if(engine.pm.buyProp(63, 1, g)){
-								StateGame.wingplaneMaxNums ++;
-							}
-						}else if(StateGame.wingplaneMaxNums==2){
-							if(engine.pm.buyProp(64, 1, g)){
-								StateGame.wingplaneMaxNums ++;
-							}
-						}else {
-							if(engine.pm.buyProp(65, 1, g)){
-								StateGame.wingplaneMaxNums ++;
+			if(engine.bate){
+				PopupText pt = UIResource.getInstance().buildDefaultPopupText();
+				pt.setText("此版本为公测版本,赞不提供道具购买,请关注我们正式版本.");
+				pt.popup();
+			}else{
+				if(menuIndex == 0){
+					if(StateGame.wingplaneMaxNums<4){
+						PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
+						pc.setText("是否要购买守护精灵?");
+						int index = pc.popup();
+						if(index==0){
+							if(StateGame.wingplaneMaxNums==1){
+								if(engine.pm.buyProp(63, 1, g)){
+									StateGame.wingplaneMaxNums ++;
+								}
+							}else if(StateGame.wingplaneMaxNums==2){
+								if(engine.pm.buyProp(64, 1, g)){
+									StateGame.wingplaneMaxNums ++;
+								}
+							}else {
+								if(engine.pm.buyProp(65, 1, g)){
+									StateGame.wingplaneMaxNums ++;
+								}
 							}
 						}
+					}else{
+						PopupText pt = UIResource.getInstance().buildDefaultPopupText();
+						pt.setText("守护精灵个数已达上线");
+						pt.popup();
 					}
 				}else{
-					PopupText pt = UIResource.getInstance().buildDefaultPopupText();
-					pt.setText("守护精灵个数已达上线");
-					pt.popup();
-				}
-			}else{
-				PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
-				pc.setText("是否要购买道具必杀技?");
-				int index = pc.popup();
-				if(index == 0){
-					if(engine.pm.buyProp(66, 1, g)){
-						StateGame.ventoseNum ++;
+					PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
+					pc.setText("是否要购买道具必杀技?");
+					int index = pc.popup();
+					if(index == 0){
+						if(engine.pm.buyProp(66, 1, g)){
+							StateGame.ventoseNum ++;
+						}
 					}
 				}
 			}

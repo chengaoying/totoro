@@ -15,6 +15,7 @@ public class Resource implements Common {
 	private static short NUMS = 0;
 	public static short id_bg = NUMS++;
 	public static short id_text = NUMS++;
+	public static short id_bate = NUMS++;
 	
 	public static short id_main_bg = NUMS++;
 	public static short id_main_button = NUMS++;
@@ -170,6 +171,7 @@ public class Resource implements Common {
 	public static String[] imagesrcs = {
 		"/init/bg.jpg",
 		"/init/text.png",
+		"/init/bate.png",
 		
 		"/main/main_bg.jpg",
 		"/main/main_button.png",
@@ -344,6 +346,7 @@ public class Resource implements Common {
 	public static void clearInit(){
 		images[id_bg] = null;
 		images[id_text] = null;
+		images[id_bate] = null;
 	}
 	
 	/*释放主界面图片*/

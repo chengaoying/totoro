@@ -26,6 +26,7 @@ import cn.ohyeah.stb.util.DateUtil;
  */
 public class TotoroGameEngine extends GameCanvasEngine implements Common {
 	public static boolean isSupportFavor = false;
+	public boolean bate = true;		//¹«²â°æ
 	public static int ScrW = 0;
 	public static int ScrH = 0;
 	
@@ -160,11 +161,13 @@ public class TotoroGameEngine extends GameCanvasEngine implements Common {
 	private void showInit(SGraphics g) {
 		Image bg = Resource.loadImage(Resource.id_bg);
 		Image text = Resource.loadImage(Resource.id_text);
+		Image bate = Resource.loadImage(Resource.id_bate);
 		g.drawImage(bg, 0, 0, 20);
 		if(cursorFrame>4){
 			int x = screenWidth/2 - text.getWidth()/2;
 			g.drawImage(text, x, 495, 20);
 		}
+		g.drawImage(bate, 445, 170, 20);
 	}
 
 

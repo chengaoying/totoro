@@ -183,13 +183,17 @@ public class StateSelectInterface implements Common{
 		}
 		y -= slantH+text2H+2;
 		StateMain.drawNum(g, num, x+text2W/2+15, y);
-		int col = g.getColor();
+		/*int col = g.getColor();
 		g.setColor(0xffffff);
 		engine.setFont(20, true);
 		//g.drawString(engine.getEngineService().getExpendAmountUnit(), x+text2W/2+70, y, 20);
-		g.drawString(engine.getEngineService().getExpendAmountUnit()+"Êý:"+engine.getEngineService().getBalance(), x+170, y, 20);
+		int money = engine.getEngineService().getBalance();
+		if(money<0){
+			money = 0;
+		}
+		g.drawString(engine.getEngineService().getExpendAmountUnit()+"Êý:"+money, x+170, y, 20);
 		g.setColor(col);
-		engine.setDefaultFont();
+		engine.setDefaultFont()*/;
 		
 		y = mapy+30+text2H+3;
 		for(int k=0;k<power;k++){

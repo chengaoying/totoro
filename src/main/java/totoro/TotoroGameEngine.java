@@ -48,7 +48,7 @@ public class TotoroGameEngine extends GameCanvasEngine implements Common {
 	
 	private TotoroGameEngine(MIDlet midlet) {
 		super(midlet);
-		setRelease(false);
+		setRelease(true);
 		ScrW = screenWidth;
 		ScrH = screenHeight;
 		stateGame = new StateGame(this);

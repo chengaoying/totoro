@@ -108,8 +108,11 @@ public class StateShop implements Common{
 		}else if(menuIndex==1){
 			TextView.showMultiLineText(g, descInfo[1]+",¼Û¸ñÎª:"+engine.pm.getPriceById(66), 2, x+315, y+80, 160, 100);
 		}
-		
-		StateMain.drawNum(g, engine.getEngineService().getBalance(), x+385, y+199);
+		/*int money = engine.getEngineService().getBalance();
+		if(money<0){
+			money = 0;
+		}
+		StateMain.drawNum(g, money, x+385, y+199);*/
 	}
 	
 	private void handleShop(KeyState keyState, SGraphics g) {

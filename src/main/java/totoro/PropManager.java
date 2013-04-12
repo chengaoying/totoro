@@ -2,7 +2,6 @@ package totoro;
 
 import cn.ohyeah.itvgame.model.OwnProp;
 import cn.ohyeah.itvgame.model.Prop;
-import cn.ohyeah.stb.game.SGraphics;
 import cn.ohyeah.stb.game.ServiceWrapper;
 import cn.ohyeah.stb.res.UIResource;
 import cn.ohyeah.stb.ui.PopupText;
@@ -100,7 +99,7 @@ public class PropManager implements Common{
 		return 0;
 	}
 	
-	public boolean buyProp(int propId, int propCount, SGraphics g){
+	public boolean buyProp(int propId, int propCount){
 		PlayerProp pp = getPropById(propId);
 		ServiceWrapper sw = engine.getServiceWrapper();
 		//sw.purchaseProp(propId, propCount, "¹ºÂò"+propName);

@@ -131,15 +131,15 @@ public class StateShop implements Common{
 					int index = pc.popup();
 					if(index==0){
 						if(StateGame.wingplaneMaxNums==1){
-							if(engine.pm.buyProp(63, 1, g)){
+							if(engine.pm.buyProp(63, 1)){
 								StateGame.wingplaneMaxNums ++;
 							}
 						}else if(StateGame.wingplaneMaxNums==2){
-							if(engine.pm.buyProp(64, 1, g)){
+							if(engine.pm.buyProp(64, 1)){
 								StateGame.wingplaneMaxNums ++;
 							}
 						}else {
-							if(engine.pm.buyProp(65, 1, g)){
+							if(engine.pm.buyProp(65, 1)){
 								StateGame.wingplaneMaxNums ++;
 							}
 						}
@@ -154,7 +154,7 @@ public class StateShop implements Common{
 				pc.setText("是否要购买道具必杀技?(1金币=1元人民币)");
 				int index = pc.popup();
 				if(index == 0){
-					if(engine.pm.buyProp(66, 1, g)){
+					if(engine.pm.buyProp(66, 1)){
 						StateGame.ventoseNum ++;
 					}
 				}

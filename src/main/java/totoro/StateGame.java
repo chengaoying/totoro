@@ -163,7 +163,7 @@ public class StateGame implements Common{
 			if(engine.isDebugMode()){
 				//factory.createWingplane(player);
 			}
-		}else if(keyState.containsAndRemove(KeyCode.NUM9)){
+		}/*else if(keyState.containsAndRemove(KeyCode.NUM9)){
 			StateShop ss = new StateShop(engine);
 			ss.processShop();
 			
@@ -175,7 +175,7 @@ public class StateGame implements Common{
 				boss.skill1STime = getTime()-(boss.skill1ETime-boss.skill1STime);
 				boss.skill2STime = getTime()-(boss.skill2ETime-boss.skill2STime);
 			}
-		}
+		}*/
 		
 	}
 	
@@ -330,7 +330,7 @@ public class StateGame implements Common{
 		case GAME_PAUSE:	//暂停
 			StateSubMenu menu = new StateSubMenu(engine);
 			int index = menu.processSubMenu();
-			if(index == 1){
+			if(index == 2){
 				//返回主界面
 				levelInterval = (int) (level_end_time-level_start_time);
 				if(factory.boss.size()>0){
@@ -1679,9 +1679,10 @@ public class StateGame implements Common{
 		}
 		TextView.showSingleLineText(g, String.valueOf(ventoseNum+startGameVentoseNums), sx, sy, 25, 25, 1);
 		y = y + venH/2-key0H/2;
+		//g.drawImage(key9, ScrW-key0W-40-key9.getWidth(), y, 20);
 		g.drawImage(key1, x+venW+10, y, 20);
-		g.drawImage(key9, ScrW-key0W-40-key9.getWidth(), y, 20);
-		g.drawImage(key0, ScrW-key0W-10, y, 20);
+		//g.drawImage(key0, ScrW-key0W-10, y, 20);
+		g.drawImage(key0, ScrW-key0W-40-key9.getWidth(), y, 20);
 		
 		int totoroW = totoro.getWidth()/2, totoroH = totoro.getHeight();
 		int totoroX = 10, totoroY = ScrH-totoroH-5;

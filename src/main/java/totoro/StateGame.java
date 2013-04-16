@@ -39,7 +39,7 @@ public class StateGame implements Common{
 	private int eIndex, mIndex, sIndex;
 	
 	private long bombStart, bombEnd;
-	private int bombInterval = 400;
+	private int bombInterval = 1000;
 	
 	private long missileStart;
 	private int missileInterval = 1500;

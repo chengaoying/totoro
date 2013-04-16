@@ -211,18 +211,18 @@ public interface Common {
 	/*僚机属性*/
 	public int wingplaneParam[][] = {
 			/*0-id, 1-picId, 2-w, 3-h, 4-blood,5-damage*/
-			{0,yellowWingplane, 23,47,50,15},
-			{1,pinkWingplane, 16,25,75,10},
-			{2,blueWingplane, 30,45,100,15},
-			{3,blackWingplane, 24,45,75,15},
+			{0,yellowWingplane, 23,47,50,30},
+			{1,pinkWingplane, 16,25,75,20},
+			{2,blueWingplane, 30,45,100,30},
+			{3,blackWingplane, 24,45,75,30},
 	};
 	
 	public int wingplaneBombParam[][] = {
 			/*0-id, 1-w, 2-h, 3-damage, 4-picId*/
-			{0, 32, 18, 30, yellowBomb1PicId, 15},
-			{1, 27, 21, 30, pinkBombPicId, 10},
-			{2, 34, 14, 30, blueBomb1PicId,20},
-			{3, 22, 23, 30, blackBomb1PicId,20},
+			{0, 32, 18, 50, yellowBomb1PicId, 15},
+			{1, 27, 21, 50, pinkBombPicId, 10},
+			{2, 34, 14, 50, blueBomb1PicId,20},
+			{3, 22, 23, 50, blackBomb1PicId,20},
 	};
 	
 	/*玩家普通攻击属性, 	数组中的数值为0表示不使用该值*/
@@ -231,32 +231,32 @@ public interface Common {
 			{
 				/*子弹等级*/
 				/*0-id, 1-宽度, 2-高度, 3-伤害, 4-x速度, 5-Y速度, 6-子弹图片id*/
-				{14, 32, 18, 20, 30, 6, yellowBomb1PicId},
-				{15, 46, 25, 25, 30, 6, yellowBomb2PicId},
-				{16, 100, 50, 30, 30, 6, yellowBomb3PicId},
+				{14, 32, 18, 40, 30, 6, yellowBomb1PicId},
+				{15, 46, 25, 50, 30, 6, yellowBomb2PicId},
+				{16, 100, 50, 60, 30, 6, yellowBomb3PicId},
 			},
 			{
 				/*子弹等级*/
 				/*0-id, 1-宽度, 2-高度, 3-伤害, 4-x速度, 5-Y速度, 6-子弹图片id*/
-				{10, 27, 21, 20, 20, 6, pinkBombPicId},
-				{11, 27, 21, 20, 20, 6, pinkBombPicId},
-				{12, 27, 21, 20, 20, 6, pinkBombPicId},
-				{13, 27, 21, 20, 20, 6, pinkBombPicId},
+				{10, 27, 21, 40, 20, 6, pinkBombPicId},
+				{11, 27, 21, 40, 20, 6, pinkBombPicId},
+				{12, 27, 21, 40, 20, 6, pinkBombPicId},
+				{13, 27, 21, 40, 20, 6, pinkBombPicId},
 			},
 			{
 				/*子弹等级*/
 				/*0-id, 1-宽度, 2-高度, 3-伤害, 4-x速度, 5-Y速度, 6-子弹图片id*/
-				{17, 34, 14, 20, 20, 6, blueBomb1PicId},
-				{18, 67, 14, 12, 20, 6, blueBomb2PicId},
-				{19, 93, 33, 8, 20, 6, blueBomb3PicId},
-				{20, 114, 51, 8, 20, 6, blueBomb4PicId},
+				{17, 34, 14, 40, 20, 6, blueBomb1PicId},
+				{18, 67, 14, 25, 20, 6, blueBomb2PicId},
+				{19, 93, 33, 16, 20, 6, blueBomb3PicId},
+				{20, 114, 51, 16, 20, 6, blueBomb4PicId},
 			},
 			{
 				/*子弹等级*/
 				/*0-id, 1-宽度, 2-高度, 3-伤害, 4-x速度, 5-Y速度, 6-子弹图片id*/
-				{21, 22, 23, 20, 30, 6, blackBomb1PicId},
-				{22, 86, 29, 12, 20, 6, blackBomb2PicId},
-				{23, 65, 65, 30, 30, 6, blackBomb3PicId},
+				{21, 22, 23, 20, 60, 6, blackBomb1PicId},
+				{22, 86, 29, 12, 40, 6, blackBomb2PicId},
+				{23, 65, 65, 30, 60, 6, blackBomb3PicId},
 			},
 	};
 	
@@ -395,20 +395,20 @@ public interface Common {
 	/*0-id, 1-宽度, 2-高度, 3-血量, 4-积分, 5-x速度, 6-y速度, 7-x坐标, 8-y坐标, 9-初始位置, 
 	 * 10-是否会攻击, 11-图片id, 12-是否会掉落奖品, 13-帧数间隔, 14-图片总帧数 , 15-精灵伤害
 	 * 16-发射子弹间隔*/
-		{100, 47, 62, 10, 15, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_1, SPIRITI_PRIZE_YES, 500, 5, 10, 3},
-		{101, 84, 76, 30, 10, 8, 8, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_2, SPIRITI_PRIZE_YES, 500, 3, 10, 3},
-		{102, 80, 62, 45, 10, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_3, SPIRITI_PRIZE_NO, 500, 3, 10, 2},
+		{100, 47, 62, 10, 15, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_1, SPIRITI_PRIZE_YES, 500, 5, 10, 5},
+		{101, 84, 76, 30, 10, 8, 8, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_2, SPIRITI_PRIZE_YES, 500, 3, 10, 5},
+		{102, 80, 62, 45, 10, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_3, SPIRITI_PRIZE_NO, 500, 3, 10, 4},
 		
-		{103, 50, 69, 45, 10, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_4, SPIRITI_PRIZE_NO, 500, 3, 10, 2},
-		{104, 63, 89, 100, 20, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_5, SPIRITI_PRIZE_YES, 500, 3, 10, 2},
-		{105, 93, 114, 20, 10, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_6, SPIRITI_PRIZE_NO, 500, 6, 10, 2},
-		{106, 79, 104, 100, 10, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_7, SPIRITI_PRIZE_YES, 500, 2, 10, 2},
+		{103, 50, 69, 45, 10, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_4, SPIRITI_PRIZE_NO, 500, 3, 10, 4},
+		{104, 63, 89, 100, 20, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_5, SPIRITI_PRIZE_YES, 500, 3, 10, 4},
+		{105, 93, 114, 20, 10, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_6, SPIRITI_PRIZE_NO, 500, 6, 10, 4},
+		{106, 79, 104, 100, 10, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_7, SPIRITI_PRIZE_YES, 500, 2, 10, 4},
 		
-		{107, 60, 75, 100, 20, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_8, SPIRITI_PRIZE_YES, 500, 3, 10, 2},
-		{108, 75, 66, 50, 20, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_9, SPIRITI_PRIZE_YES, 500, 3, 10, 2},
+		{107, 60, 75, 100, 20, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_8, SPIRITI_PRIZE_YES, 500, 3, 10, 4},
+		{108, 75, 66, 50, 20, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_9, SPIRITI_PRIZE_YES, 500, 3, 10, 4},
 		
-		{109, 105, 79, 150, 25, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_10, SPIRITI_PRIZE_YES, 500, 5, 10, 2},
-		{110, 45, 97, 200, 25, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_11, SPIRITI_PRIZE_YES, 500, 4, 10, 2},
+		{109, 105, 79, 150, 25, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_10, SPIRITI_PRIZE_YES, 500, 5, 10, 4},
+		{110, 45, 97, 200, 25, 6, 6, 640, 200, 0, ATTACK_PERMISSION_YES, spirits_11, SPIRITI_PRIZE_YES, 500, 4, 10, 4},
 		
 		//幽灵boss出的小怪
 		{111, 22, 32, 200, 25, 6, 6, 640, 200, 0, ATTACK_PERMISSION_NO, spirits_12, SPIRITI_PRIZE_NO, 500, 3, 5, 2},

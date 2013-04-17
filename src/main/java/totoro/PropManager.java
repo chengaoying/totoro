@@ -49,8 +49,22 @@ public class PropManager implements Common{
 	private void initProps(PlayerProp[] props2) {
 		ServiceWrapper sw = engine.getServiceWrapper();
 		Prop[] ps = sw.queryGamePropList();
+		if(ps == null){
+			props = new PlayerProp[8];
+			for(int j=0;j<props.length;j++){
+				PlayerProp prop = new PlayerProp();
+				prop.setPropId(j);
+				prop.setName("null");
+				prop.setPrice(0);
+				prop.setId(j);
+				prop.setNums(0);
+				prop.setDesc("null");
+				prop.setFeeCode(0);
+				props[j] = prop;
+			}
+			return;
+		}
 		props = new PlayerProp[ps.length];
-		System.out.println("创建道具数据并初始化道具信息,size:"+props.length);
 		for(int i=0;i<ps.length;i++){
 			for(int j=0;j<props.length;j++){
 				PlayerProp prop = new PlayerProp();

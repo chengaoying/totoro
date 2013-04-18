@@ -1375,7 +1375,7 @@ public class StateGame implements Common{
 			isVentosePrompt = false;
 		}
 		if(isVentosePrompt){
-			String str = "必杀技已用光,请按9键进入商城购买";
+			String str = "必杀技已用光,可以去商城购买";
 			drawPrompt(g, str);
 		}
 		if(engine.isDebugMode()){

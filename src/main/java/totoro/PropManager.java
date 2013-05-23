@@ -45,23 +45,40 @@ public class PropManager implements Common{
 	private void initProps(PlayerProp[] props2) {
 		ServiceWrapper sw = engine.getServiceWrapper();
 		Prop[] ps = sw.queryGamePropList();
-		props = new PlayerProp[ps.length];
-		System.out.println("创建道具数据并初始化道具信息,size:"+props.length);
-		for(int i=0;i<ps.length;i++){
-			for(int j=0;j<props.length;j++){
-				PlayerProp prop = new PlayerProp();
-				if(i==j){
-					prop.setPropId(ps[i].getPropId());
-					prop.setName(ps[i].getPropName());
-					prop.setPrice(ps[i].getPrice());
-					prop.setId(j);
-					prop.setNums(0);
-					prop.setDesc(ps[i].getDescription());
-					prop.setFeeCode(ps[i].getFeeCode());
-					props[j] = prop;
+		if(ps!=null){
+			props = new PlayerProp[ps.length];
+			System.out.println("创建道具数据并初始化道具信息,size:"+props.length);
+			for(int i=0;i<ps.length;i++){
+				for(int j=0;j<props.length;j++){
+					PlayerProp prop = new PlayerProp();
+					if(i==j){
+						prop.setPropId(ps[i].getPropId());
+						prop.setName(ps[i].getPropName());
+						prop.setPrice(ps[i].getPrice());
+						prop.setId(j);
+						prop.setNums(0);
+						prop.setDesc(ps[i].getDescription());
+						prop.setFeeCode(ps[i].getFeeCode());
+						props[j] = prop;
+					}
 				}
 			}
+		}else{
+			props = new PlayerProp[8];
+			System.out.println("创建道具数据并初始化道具信息,size:"+props.length);
+				for(int j=0;j<props.length;j++){
+					PlayerProp prop = new PlayerProp();
+						prop.setPropId(j);
+						prop.setName("test");
+						prop.setPrice(0);
+						prop.setId(j);
+						prop.setNums(0);
+						prop.setDesc("test");
+						prop.setFeeCode(0);
+						props[j] = prop;
+				}
 		}
+		
 		
 		for(int m=0;m<props.length;m++){
 			System.out.println("propId:"+props[m].getPropId()+", price:"+props[m].getPrice()+", name:"+props[m].getName());

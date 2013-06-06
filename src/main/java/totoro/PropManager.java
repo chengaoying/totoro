@@ -119,9 +119,10 @@ public class PropManager implements Common{
 	
 	public boolean buyProp(int propId, int propCount, SGraphics g){
 		PlayerProp pp = getPropById(propId);
-		if (engine.getEngineService().getBalance() >= pp.getPrice()) {
+		//if (engine.getEngineService().getBalance() >= pp.getPrice()) {
 			ServiceWrapper sw = engine.getServiceWrapper();
-			sw.purchaseProp(propId, 1, "购买"+pp.getName());
+			//sw.purchaseProp(propId, 1, "购买"+pp.getName());
+			sw.expendTelcomsh(propId, "购买"+pp.getName());
 			PopupText pt = UIResource.getInstance().buildDefaultPopupText();
 			if (sw.isServiceSuccessful()) {
 				pt.setText("购买"+pp.getName()+"成功");
@@ -132,7 +133,7 @@ public class PropManager implements Common{
 			}
 			pt.popup();
 			return sw.isServiceSuccessful();
-		}else {
+		/*}else {
 			PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
 			if(Configurations.getInstance().isTelcomOperatorsTelcomfj()){
 				pc.setText("是否退出游戏并跳转至大厅充值界面?");
@@ -159,7 +160,7 @@ public class PropManager implements Common{
 				}
 			}
 			return false;
-		}
+		}*/
 	}
 	
 	/*同步道具*/

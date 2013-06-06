@@ -152,7 +152,10 @@ public class StateMain implements Common{
 				Resource.clearMain();
 			}
 		} else if (mainIndex == 2) {	//充值
-			PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
+			PopupText pt = UIResource.getInstance().buildDefaultPopupText();
+			pt.setText("赞不支持充值，请到大厅充值!");
+			pt.popup();
+			/*PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
 			if(Configurations.getInstance().isTelcomOperatorsTelcomfj()){
 				pc.setText("是否退出游戏并跳转至大厅充值界面?");
 				if (pc.popup() == 0) {
@@ -170,7 +173,7 @@ public class StateMain implements Common{
 			}else{
 				Recharge recharge = new Recharge(engine);
 				recharge.recharge();
-			}
+			}*/
 		} else if (mainIndex == 3){ 	//游戏帮助
 			StateHelp sh = new StateHelp(engine);
 			sh.processHelp();

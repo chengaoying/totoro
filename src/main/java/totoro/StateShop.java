@@ -104,9 +104,9 @@ public class StateShop implements Common{
 		
 		g.setColor(0xffffff);
 		if(menuIndex==0){
-			TextView.showMultiLineText(g, descInfo[0]+",价格为:"+price+"TV币或"+engine.getEngineService().getExpendAmountUnit(), 2, x+315, y+80, 160, 100);
+			TextView.showMultiLineText(g, descInfo[0]+",价格为:"+price+engine.getEngineService().getExpendAmountUnit(), 2, x+315, y+80, 160, 100);
 		}else if(menuIndex==1){
-			TextView.showMultiLineText(g, descInfo[1]+",价格为:"+engine.pm.getPriceById(66)+"TV币或"+engine.getEngineService().getExpendAmountUnit(), 2, x+315, y+80, 160, 100);
+			TextView.showMultiLineText(g, descInfo[1]+",价格为:"+engine.pm.getPriceById(66)+engine.getEngineService().getExpendAmountUnit(), 2, x+315, y+80, 160, 100);
 		}
 		
 		StateMain.drawNum(g, engine.getEngineService().getBalance(), x+385, y+199);

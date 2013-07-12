@@ -152,9 +152,11 @@ public class StateMain implements Common{
 				Resource.clearMain();
 			}
 		} else if (mainIndex == 2) {	//充值
-			PopupText pt = UIResource.getInstance().buildDefaultPopupText();
+			Recharge recharge = new Recharge(engine);
+			recharge.recharge();
+			/*PopupText pt = UIResource.getInstance().buildDefaultPopupText();
 			pt.setText("赞不支持充值，请到大厅充值!");
-			pt.popup();
+			pt.popup();*/
 			/*PopupConfirm pc = UIResource.getInstance().buildDefaultPopupConfirm();
 			if(Configurations.getInstance().isTelcomOperatorsTelcomfj()){
 				pc.setText("是否退出游戏并跳转至大厅充值界面?");
